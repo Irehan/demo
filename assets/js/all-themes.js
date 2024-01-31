@@ -17,10 +17,33 @@ if(navigator.userAgent.indexOf("Chrome-Lighthouse") == -1) {
 //# sourceMappingURL=bootstrap.bundle.min.js.map
  /*! // Bootstrap v5.0.2 END*/
   /*! // CUSTOM JS  START */
+  // Top To UP Start //
+  if ($("#back-to-top").length) {
+    var scrollTrigger = 100,
+      backToTop = function () {
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop > scrollTrigger) {
+          $("#back-to-top").addClass("show");
+        } else {
+          $("#back-to-top").removeClass("show");
+        }
+      };
+    backToTop();
+    $(window).on("scroll", function () {
+      backToTop();
+    });
+    $("#back-to-top").on("click", function (e) {
+      e.preventDefault();
+      $("html,body").animate(
+        {
+          scrollTop: 0,
+        },
+        700
+      );
+    });
+  }
+  // Top To UP End //
 // sticky header start
-window.onscroll = function () {
-    myFunction();
-};
 window.onscroll = function () {
     myFunction();
 };
@@ -35,27 +58,53 @@ function myFunction() {
 }
 // sticky header end
 // slick slider start
-jQuery(".testislider").slick({
-  autoPlay: true,
+jQuery(".aboutsSlider").slick({
+  autoplay: true,
   swipeToSlide: true,
   slidesToShow: 1,
   centerPadding: "0",
   slidesToScroll: 1,
-  dots: !0,
-  arrows: false,
+  dots: false,
+  arrows: true,
   swipe: !0,
   swipeToSlide: !0,
-  responsive: [
-      { breakpoint: 1100, settings: 
-        { slidesToShow: 2,
-          slidesToScroll: 1,
-          adaptiveHeight: !0,
-          centerMode: false,
-          dots: true,
-          arrow:false
-        } },
-      { breakpoint: 991, settings: { slidesToShow: 1, slidesToScroll: 1, adaptiveHeight: !0, dots: !0, arrows: !1, centerMode: !1 } },
-      { breakpoint: 800, settings: { slidesToShow: 1, slidesToScroll: 1, dots: !0, arrows: !1, centerMode: !1 } },
+  responsive: [{
+          breakpoint: 1100,
+          settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              adaptiveHeight: false,
+              centerMode: false,
+              dots: true,
+              arrow: true,
+              autoplay: true,
+          }
+      },
+      {
+          breakpoint: 991,
+          settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              adaptiveHeight: !0,
+              dots: !0,
+              centerMode: !1,
+              swipeToSlide: true,
+              arrow: true,
+              autoplay: true,
+          }
+      },
+      {
+          breakpoint: 800,
+          swipeToSlide: true,
+          settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: !0,
+              centerMode: !1,
+              arrow: true,
+              autoplay: true,
+          }
+      },
   ],
 });
 // slick slider end
