@@ -18,7 +18,7 @@ html{
 	outline: none;
 }
 body {
-	font-family: 'Jost', sans-serif;
+	font-family: var(--bodyFont);
 	font-size: 1.125rem;
 	line-height: 1.875rem;
 }
@@ -88,6 +88,64 @@ img{
 	max-width: 100%;
 	height: auto;
 }
+.hamburger-box {
+    color: #fff;
+    background: var(--themeColor);
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+    display: inline-block;
+}
+p{
+	font-size: 1rem;
+}
+/* BACK TO TOP START*/
+#back-to-top {
+	position: fixed;
+	bottom: 2.5rem;
+	right: 1.875rem;
+	z-index: 99;
+	width: 2.625rem;
+	height: 2.625rem;
+	text-align: center;
+	line-height: 1.875rem;
+	color: #fff;
+	cursor: pointer;
+	border: 0;
+	text-decoration: none;
+	-webkit-transition: opacity 0.2s ease-out;
+	-o-transition: opacity 0.2s ease-out;
+	transition: opacity 0.2s ease-out;
+	opacity: 0;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	background: #000;
+	border-radius: 50%;
+	font-size: 1.125rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+  }
+  #back-to-top:hover {
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+  }
+  #back-to-top.show {
+	opacity: 1;
+  }
+  .arrowUp {
+	width: 100%;
+  }
+
+/* BACK TO TOP END*/
+
 .sticky {
 	position: fixed;
 	top: 0;
