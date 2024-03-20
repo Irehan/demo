@@ -1,0 +1,178 @@
+<!-- HTML START -->
+<li  class="dropdown mega-dropdown">
+
+    <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" id="servicesDropdown">Services</a>
+    <!--  mega menu -->	
+    
+    <ul class="dropdown-menu mega-dropdown-menu">
+       
+       <div class="row">
+          <ul>
+       <li class="col-sm-3">
+          <ul>
+             <li> 
+                <a href="#">
+                <span class="appDev"><img src="assets/images/app-development.png" alt=""></span> Website Development</a>
+             </li>
+             <li><a href="#"> <span class="appDev"><img src="assets/images/app-development.png" alt=""></span>CRM & Software</a> </li>
+          </ul>
+       </li>
+       <li class="col-sm-3">
+          <ul>
+             <li> <a href="#"> <span class="appDev"><img src="assets/images/app-development.png" alt=""></span>Digital Marketing</a></li>
+          </ul>
+       </li>
+       <li class="col-sm-3">
+          <ul>
+             <li> <a href="#"> <span class="appDev"><img src="assets/images/app-development.png" alt=""></span>Mobile App Development</a></li>
+          </ul>
+       </li>
+       <li class="col-sm-3">
+          <ul>
+             <li> <a href="#"> <span class="appDev"><img src="assets/images/app-development.png" alt=""></span>Domain, Hosting & SSL</a></li>
+          </ul>
+       </li>
+    </ul>
+ </div>
+    </ul>
+
+    <!--  mega menu // -->
+ </li>
+<!-- HTML END -->
+
+<!-- CSS START  -->
+/*  mega menu */
+.navbar-brand {
+    position: relative;
+    z-index: 2;
+}
+.mega-dropdown {
+	position: static !important;
+  }
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+}
+  .mega-dropdown-menu {
+	z-index: 1;
+	padding: 20px 0px;
+	width: 100%;
+	-webkit-box-shadow: none;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: #fff !important;
+	display: none; /* Initially hide the dropdown menu */
+  } 
+.mega-dropdown-menu a{
+	background: transparent !important;
+	color: #000 !important;
+}
+
+.mega-dropdown-menu li a:hover {
+	color:var(--secondryColor) !important;
+  }
+
+.appDev{
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	margin-right: .3125rem;
+}
+
+.appDev img{
+	width: 100%;
+}
+
+ul.dropdown-menu.mega-dropdown-menu li ul{
+	position: relative;
+}
+
+ul.dropdown-menu.mega-dropdown-menu li ul:before{
+position: absolute;
+content: "";
+right: 0;
+top: 0;
+width: 2px;
+height: 100%;
+background: #ccc;
+}
+.navbar-nav.menunav li .mega-dropdown-menu li{
+margin-right: 0;
+}
+.navbar-nav.menunav li .mega-dropdown-menu li.col-sm-3 ul li {
+	margin-bottom: 30px;
+}
+.mega-dropdown-menu .col-sm-3 ul li:last-child  {
+    margin-bottom: 0 !important;
+}
+.mega-dropdown-menu li a {
+	padding: 5px !important;
+	display: block !important;
+	font-size: 0.9rem;
+}
+.navbar-nav.menunav li .mega-dropdown-menu li:nth-child(4) ul:before{
+display: none;
+}
+.menunav li .mega-dropdown-menu a:hover:after{
+display: none;
+}
+.dropdown-toggle::after{
+	border: 0;
+}
+.dropdown-toggle:before{
+	top: -2px;
+    content: "\25BC" !important;
+    display: inline-block !important;
+    position: absolute;
+    right: -11px;
+    font-size: 10px;
+}
+li.dropdown.mega-dropdown {
+    margin-right: 1.9rem;
+}
+div#header {
+    position: relative;
+    z-index: 999;
+}
+
+.dropdown-menu.mega-dropdown-menu .row ul{
+    display: flex;
+    flex-wrap: wrap;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
+
+  @media (min-width: 1200px){
+.navbar-expand-xl .navbar-nav .dropdown-menu {
+	position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 3.125rem;
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 99.8%;
+}
+  }
+/* mega menu end */
+<!-- CSS END  -->
+
+<!-- JABASCRIPT START  -->
+// MEGA MENU 
+// Function to toggle dropdown menu
+function toggleDropdownMenu(event) {
+    const dropdownMenu = document.querySelector('.mega-dropdown-menu');
+    const screenWidth = window.innerWidth;
+    // Check screen width to determine behavior
+    if (screenWidth <= 1024) { // Mobile devices
+        event.preventDefault(); // Prevent default link behavior
+        if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+            dropdownMenu.style.display = 'block';
+        } else {
+            dropdownMenu.style.display = 'none';
+        }
+    }
+}
+// Event listener for dropdown toggle
+document.querySelector('.dropdown-toggle').addEventListener('click', toggleDropdownMenu);
+// MEGA MENU END
+<!-- JABASCRIPT END  -->

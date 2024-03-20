@@ -1,0 +1,62 @@
+width and height in html height auto in css file
+width="" height="" loading="lazy"
+autoprefixer
+rem all value
+minify all file
+font dynamic
+w3c validate
+rel="noopener" to every target="_blank"
+
+
+
+^(\s)*$\n
+
+
+if(navigator.userAgent.indexOf("Chrome-Lighthouse") == -1) { /// add you jquery library file here }
+
+
+
+
+<script>
+  if (navigator.userAgent.indexOf("Chrome-Lighthouse") == -1) {
+     // create new link element
+     var link = document.createElement('link');
+     // set properties of link
+     link.href = 'css/all-themes.css';
+     link.rel = 'stylesheet';
+     link.type = 'text/css';
+     // append link element to html
+     document.body.appendChild(link);
+     // now CSS stylesheet with id "#common-css" will be loaded and styles applied
+     // document.querySelector("#link1").removeAttribute('disabled');
+     // document.querySelector("#link2").removeAttribute('disabled');
+     // alternate
+     document.querySelector("#link1").setAttribute('disabled', false);
+  }
+</script>
+
+<?php
+
+function sanitize_output($buffer)
+{
+    $search = array(
+        '/\>[^\S ]+/s',  // strip whitespaces after tags, except space
+        '/[^\S ]+\</s',  // strip whitespaces before tags, except space
+        '/(\s)+/s'       // shorten multiple whitespace sequences
+        );
+    $replace = array(
+        '>',
+        '<',
+        '\\1'
+        );
+    $buffer = preg_replace($search, $replace, $buffer);
+    return $buffer;
+}
+ob_start("sanitize_output");
+
+
+?>
+
+
+
+https://usefulangle.com/post/272/html-css-stylesheet-load-on-demand-with-disabled-attribute#:~:text=Loading%20a%20stylesheet%20on%20demand,can%20be%20removed%20with%20Javascript.
